@@ -42,16 +42,37 @@ predVal = sim(net, X(:,valInd));
 CCRval = sum(sign(predVal) == T(valInd))*100/length(valInd)
 
 %% PCA
-% preprocess the data to get zero mean
-Ntrain = size(X(trainInd),2)
-mean = X(:, trainInd) - repmat(mean(x,2), 1, N);
-zeromean =  - repmat(mean(x,2), 1, N)
-zeromean = mapstd(X(:,trainInd)) - repmat(mean(x,2), 1, N);
+
+% preprocess the data to get zero mean = 0 and stddev = 1 for all
+% properties
+Ntrain = size(X(:,trainInd),2); % number of training data points
+meanTrain = mean(X(:,trainInd)'); % calculate the mean value of the 11 properties
+stddevTrain = std(X(:,trainInd)'); % calculate the standard deviation (N-1) dofs
+% normalize the data
+zeromeanTrain = mapstd(X(:,trainInd))';
+std(zeromeanTrain) % a check
+
 % create 11 x 11 covariance matrix
-covMat = cov(zeromean'); % every row must be data entry
+covMat = cov(zeromeanTrain); % every row must be data entry
+
 % calculate the eigv and eigd
-[eigvecs, eigvals] = eig(covMat)
-eigvals = diag(eigvals)
+[eigvecs, eigvals] = eig(covMat, 'vector');
+% sort it
+[eigvals,eigindices] = sort(eigvals, 'descend');
+eigvalsvecs = eigvecs(:,eigindices);
+
 sum(eigvals)
+
 % plot the eigenvalues
 bar(eigvals)
+ylabel('\lambda_k');
+xlabel('k');
+savefig('eigenvalues.fig');
+
+% we project the vectors onto the restricted eigenbasis (columns of eigvecs)
+numBasisVecs=11; % choose the number of eigenvectors
+eigvecs = eigvecs(:,1:numBasisVecs);
+PCATrainReduced = eigvecs'*zeromeanTrain'; % project onto those eigenvectors
+
+% reconstruct
+PCATrain = eigvecs*PCATrainReduced;
