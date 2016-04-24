@@ -41,5 +41,17 @@ net.trainParam.min_grad = 10^-15; % may vary this
 predVal = sim(net, X(:,valInd));
 CCRval = sum(sign(predVal) == T(valInd))*100/length(valInd)
 
-
-
+%% PCA
+% preprocess the data to get zero mean
+Ntrain = size(X(trainInd),2)
+mean = X(:, trainInd) - repmat(mean(x,2), 1, N);
+zeromean =  - repmat(mean(x,2), 1, N)
+zeromean = mapstd(X(:,trainInd)) - repmat(mean(x,2), 1, N);
+% create 11 x 11 covariance matrix
+covMat = cov(zeromean'); % every row must be data entry
+% calculate the eigv and eigd
+[eigvecs, eigvals] = eig(covMat)
+eigvals = diag(eigvals)
+sum(eigvals)
+% plot the eigenvalues
+bar(eigvals)
