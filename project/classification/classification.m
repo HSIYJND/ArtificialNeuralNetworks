@@ -46,33 +46,27 @@ CCRval = sum(sign(predVal) == T(valInd))*100/length(valInd)
 % preprocess the data to get zero mean = 0 and stddev = 1 for all
 % properties
 Ntrain = size(X(:,trainInd),2); % number of training data points
-meanTrain = mean(X(:,trainInd)'); % calculate the mean value of the 11 properties
-stddevTrain = std(X(:,trainInd)'); % calculate the standard deviation (N-1) dofs
-% normalize the data
-zeromeanTrain = mapstd(X(:,trainInd))';
-std(zeromeanTrain) % a check
-
-% create 11 x 11 covariance matrix
-covMat = cov(zeromeanTrain); % every row must be data entry
-
-% calculate the eigv and eigd
-[eigvecs, eigvals] = eig(covMat, 'vector');
-% sort it
-[eigvals,eigindices] = sort(eigvals, 'descend');
-eigvalsvecs = eigvecs(:,eigindices);
-
-sum(eigvals)
+[~,~,eigvals,~,~] = doPCA(X(:,trainInd)',11); % use all 11
 
 % plot the eigenvalues
-bar(eigvals)
+bar(eigvals/sum(eigvals)) % shows that one needs 'only' 10 basis vectors
 ylabel('\lambda_k');
 xlabel('k');
 savefig('eigenvalues.fig');
 
 % we project the vectors onto the restricted eigenbasis (columns of eigvecs)
 numBasisVecs=11; % choose the number of eigenvectors
-eigvecs = eigvecs(:,1:numBasisVecs);
-PCATrainReduced = eigvecs'*zeromeanTrain'; % project onto those eigenvectors
+[eigvecs,redXTrain,eigvals,meanTrain,stddevTrain] = doPCA(X(:,trainInd)',numBasisVecs);
 
 % reconstruct
-PCATrain = eigvecs*PCATrainReduced;
+PCATrain = redXTrain*eigvecs';
+% rescale and shift
+for i = 1:Ntrain
+    PCATrain(i,:) = PCATrain(i,:) .* stddevTrain; % rescale
+    PCATrain(i,:) = PCATrain(i,:) + meanTrain; % shift
+end
+% look at the differences
+X(:,trainInd)'
+PCATrain
+PCATrain - X(:,trainInd)'
+max(max(PCATrain - X(:,trainInd)'))
