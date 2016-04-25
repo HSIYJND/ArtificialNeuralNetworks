@@ -9,7 +9,7 @@ p = size(threes,1);
 
 % compute and show the mean 3
 meanthree = mean(threes, 2);
-stddevthrees = std(threes,0,2);
+stddevthree = std(threes,0,2);
 colormap(gray);
 imagesc(reshape(meanthree,16,16),[0,1])
 
@@ -55,9 +55,7 @@ for q=1:qmax
     [E,z,d] = PCAJannes(zmthrees, q);
     %reconstruct
     size(meanthree)
-    TryImageReconstructed = (E*z(:,TryImageIndex)).*stddevthrees + meanthree;
-    % rescale
- 
+    TryImageReconstructed = (E*z(:,TryImageIndex))* + meanthree;
     subplot(1,qmax+1,q);
     colormap(gray);
     imagesc(reshape(TryImageReconstructed,16,16),[0,1]);

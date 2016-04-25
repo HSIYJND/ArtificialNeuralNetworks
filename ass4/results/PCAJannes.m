@@ -10,12 +10,18 @@ function [E,z,d] = PCAJannes(x, q)
 p = size(x,1);
 N = size(x,2);
 
+% calculate mean and stddev
+meanX = mean(x,2);
+stddevX = std(x,0,2);
+
 % subtract the mean vector from x
-x = x - repmat(mean(x,2), 1, N);
+for i = 1:N
+    x(:,i) = x(:,i) - meanX;
+    x(:,i) = x(:,i) ./ stddevX;
+end
 
 % make x zero mean and calculate the covariance matrix
 V = cov(transpose(x));
-
 
 % calculate the eigenvectors and eigenvalues
 % E is the matrix with columns the eigenvectors

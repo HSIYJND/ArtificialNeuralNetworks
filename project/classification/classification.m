@@ -46,27 +46,50 @@ CCRval = sum(sign(predVal) == T(valInd))*100/length(valInd)
 % preprocess the data to get zero mean = 0 and stddev = 1 for all
 % properties
 Ntrain = size(X(:,trainInd),2); % number of training data points
-[~,~,eigvals,~,~] = doPCA(X(:,trainInd)',11); % use all 11
+[~,~,eigvals,~,~,~] = doPCA(X(:,trainInd)',11); % use all 11
 
 % plot the eigenvalues
-bar(eigvals/sum(eigvals)) % shows that one needs 'only' 10 basis vectors
-ylabel('\lambda_k');
-xlabel('k');
+figure;
+bar(eigvals/max(eigvals)); hold on; % shows that one needs 'only' 10 basis vectors
+plot(1:11, 1-cumsum(eigvals/sum(eigvals)), 'r-', 'LineWidth', 2)
+ylabel('\lambda_k'); xlabel('k');
 savefig('eigenvalues.fig');
 
 % we project the vectors onto the restricted eigenbasis (columns of eigvecs)
-numBasisVecs=11; % choose the number of eigenvectors
-[eigvecs,redXTrain,eigvals,meanTrain,stddevTrain] = doPCA(X(:,trainInd)',numBasisVecs);
+numBasisVecs=10; % choose the number of eigenvectors
+[PCABasis,redXTrain,eigvals,meanTrain,stddevTrain,stdXTrain] = doPCA(X(:,trainInd)',numBasisVecs);
 
-% reconstruct
-PCATrain = redXTrain*eigvecs';
-% rescale and shift
-for i = 1:Ntrain
-    PCATrain(i,:) = PCATrain(i,:) .* stddevTrain; % rescale
-    PCATrain(i,:) = PCATrain(i,:) + meanTrain; % shift
-end
-% look at the differences
-X(:,trainInd)'
-PCATrain
-PCATrain - X(:,trainInd)'
-max(max(PCATrain - X(:,trainInd)'))
+% project also validation and test set, but first standardize them, use
+% part of my doPCA function for this
+[~,~,~,meanVal,stddevVal,stdXVal] = doPCA(X(:,valInd)',numBasisVecs);
+[~,~,~,meanTest,stddevTest,stdXTest] = doPCA(X(:,testInd)',numBasisVecs);
+
+% now project the vectors
+redXVal = stdXVal*PCABasis;
+redXTest = stdXTest*PCABasis;
+
+% create a new input matrix X from these components
+X = zeros(numBasisVecs,N);
+X(:,trainInd) = redXTrain';
+X(:,valInd) = redXVal';
+X(:,testInd) = redXTest';
+
+% we can now use them for training
+%% CREATING A NEURAL NETWORK TO CLASSIFY THE DATA
+% create a network and train it
+net = feedforwardnet(20, 'trainlm');
+% classification values are between -1 and 1, hence, we can use the tangent
+% sigmoid function in the output layer as well
+net.layers{1}.transferFcn = 'tansig'; % hidden layer
+net.layers{2}.transferFcn = 'tansig'; % output layer
+net.divideFcn = 'divideind';
+net.divideParam.trainInd = trainInd;
+net.divideParam.valInd = valInd;
+net.divideParam.testInd = testInd;
+net.trainParam.max_fail = 50; % may vary this
+net.trainParam.min_grad = 10^-15; % may vary this
+[net, tr] = train(net,X,T);
+
+%% PERFORMANCE CHECKS
+predVal = sim(net, X(:,valInd));
+CCRval = sum(sign(predVal) == T(valInd))*100/length(valInd)

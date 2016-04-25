@@ -1,4 +1,4 @@
-function [E,z,d,meanVec,stddevVec] = doPCA(x, q)
+function [E,z,d,meanVec,stddevVec,stdX] = doPCA(x, q)
 % DOPCA  Do a Principle Component Analysis on a data set x
 %   [E,z,mean,stddev] = DOPCA(x,q) with x a dataset with each row a data entry, 
 %   performs PCA with result z and matrix E.
@@ -12,14 +12,14 @@ assert( q <= p );
 N = size(x,1);
 
 % calculate the mean for all p data properties
-meanVec = mean(x)
-stddevVec = std(x)
+meanVec = mean(x);
+stddevVec = std(x);
 
 % rescale and shift with these vectors
 stdX = zeros(N, 11);
 for i = 1:N
     stdX(i,:) = x(i,:) - meanVec;       % shift
-    stdX(i,:) = x(i,:) ./ stddevVec;  % rescale
+    stdX(i,:) = stdX(i,:) ./ stddevVec;  % rescale
 end
 
 % calculate the covariance matrix of the standardized data set
