@@ -77,7 +77,7 @@ X(:,testInd) = redXTest';
 % we can now use them for training
 %% CREATING A NEURAL NETWORK TO CLASSIFY THE DATA
 % create a network and train it
-net = feedforwardnet(20, 'trainlm');
+net = feedforwardnet(15, 'trainlm');
 % classification values are between -1 and 1, hence, we can use the tangent
 % sigmoid function in the output layer as well
 net.layers{1}.transferFcn = 'tansig'; % hidden layer
