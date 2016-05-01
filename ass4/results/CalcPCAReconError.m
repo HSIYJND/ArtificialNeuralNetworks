@@ -6,22 +6,20 @@ function mse = CalcPCAReconError(x, q)
 %
 %   See also PCA.
 
-% get the dimension p of x and the number of datapoints N
-p = size(x,1);
+% get the number of datapoints N
 N = size(x,2);
 
-% project
-[E,z,d]=PCAJannes(x, q);
+% project on the PCA basis
+[E,z,~]=PCAJannes(x, q);
 
 % now reconstruct and calculate the error
 % reconstruct x
 errorx = x; % for the shape
 meanx = mean(x, 2);
-stdx = std(x,0,2);
+stdx = std(x,0,2); % N-1
 for i = 1:N
     errorx(:,i) = x(:,i) - ((E*z(:,i)).*stdx  + meanx);
 end
-%errorx = x - (E*z + repmat(mean(x, 2),1,N));
 
 % calculate the distance
-mse = sum(sum(errorx.^2))/N;
+mse = sum(sum(errorx.^2))/N; % normalize on the total nr of data points

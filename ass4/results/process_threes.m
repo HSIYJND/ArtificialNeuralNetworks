@@ -9,7 +9,7 @@ p = size(threes,1);
 
 % compute and show the mean 3
 meanthree = mean(threes, 2);
-stddevthrees = std(threes,0,2);
+stddevthrees = std(threes,0,2); % Pass in FLAG==0 to use the default normalization by N-1
 colormap(gray);
 imagesc(reshape(meanthree,16,16),[0,1])
 
@@ -18,13 +18,13 @@ size(meanthree)
 size(threes)
 size(repmat(meanthree,1,N))
 %zmthrees = threes - repmat(meanthree,1,N);
-zmthrees = mapstd(threes')';
+zmthrees = mapstd(threes')'; % the standardized zero mean threes
 
 % compute the covariance matrix
 covmatrix = cov(transpose(zmthrees));
 
 % calculate the eigenvalues and eigenvectors
-[Eall,Dall] = eig(covmatrix);
+[~,Dall] = eig(covmatrix);
 Dall = diag(Dall);
 figure
 semilogy(Dall)
@@ -32,7 +32,7 @@ hold off;
 close all;
 
 % display six largest eigenvalues
-[DallSorted,DallSortedIndices] = sort(Dall,'descend');
+DallSorted = sort(Dall,'descend');
 
 figure
 for i = 1:6
@@ -48,7 +48,7 @@ close all;
 
 %% Choose an image to do analysis on
 TryImageIndex = 20;
-qmax = 6
+qmax = 6 % take a basis of 6 PCA's
 figure
 for q=1:qmax
     % now compress
@@ -58,7 +58,7 @@ for q=1:qmax
     TryImageReconstructed = (E*z(:,TryImageIndex)).*stddevthrees + meanthree;
     % rescale
  
-    subplot(1,qmax+1,q);
+    subplot(1,qmax+1,q); % the last one is the actual figure
     colormap(gray);
     imagesc(reshape(TryImageReconstructed,16,16),[0,1]);
     axis off;
