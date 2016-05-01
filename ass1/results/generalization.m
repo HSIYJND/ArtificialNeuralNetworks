@@ -36,6 +36,7 @@ hold on;
 Legend=cell(1, size(trainAlgos,1));
 
 for algoNr = 1:size(trainAlgos,1)
+    rng(123) % set the same seed for all algos
     
     algoName=char(strcat(trainAlgos(algoNr,:)))
     Legend{algoNr}=algoName;
@@ -47,7 +48,6 @@ for algoNr = 1:size(trainAlgos,1)
         
         ymean = zeros(size(yoriginal));
         variance = zeros(size(yoriginal));
-        bias = zeros(size(yoriginal));
         
         
         % generate a number of data sets
@@ -80,7 +80,7 @@ for algoNr = 1:size(trainAlgos,1)
         % store the results
         biasResults(algoNr, neuronNr) = bias;
         varianceResults(algoNr, neuronNr) = variance;
-        endcd 
+    end
     hold on;
     subplot(1,2,1);
     semilogy(neuronNrs,biasResults(algoNr, :), 'DisplayName', algoName, 'LineWidth', 2)

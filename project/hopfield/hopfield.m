@@ -42,7 +42,6 @@ net = newhop(T);
 % in a spurious state
 
 % catch all the wrong states
-wrongStates=cell(1,1);originalStates=cell(1,1);
 Nwrong = 0;
 timesteps = 1000;
 for letterNr = 1:5
@@ -50,26 +49,68 @@ for letterNr = 1:5
     letter = T(:,letterNr);
     for it = 1:1000
         distImage = DistortImage(letter);
-        Ai = {distImage};
-        [Y,Pf,Af] = net({1 timesteps},{},Ai); % five time steps
+        [Y,~,~] = net({1 timesteps},{},{distImage});
         if ~isequal(Y{end},letter)
-            any(isequal(wrongStates,Y{end}))
-            Nwrong = Nwrong + 1;
-            (Y{end} - letter)'
-            fprintf('  Wrong state at iteration: %i\n',it);
-            wrongStates{Nwrong} = Y{end};
-            originalStates{Nwrong} = letter;
+            if (Nwrong ~= 0 && sum(ismember(Y{end}', wrongStates', 'rows'))==1) % avoid doubles
+                fprintf('Same state.\n')
+            else
+                Nwrong = Nwrong + 1;
+                fprintf('  Wrong state at iteration: %i\n',it);
+                wrongStates(:,Nwrong) = Y{end};
+                originalStates(:,Nwrong) = Y{end};
+            end
         end
     end
 end
 
 figure;
+colormap(gray)
 for wrongNr = 1:Nwrong
     subplot(2,Nwrong,wrongNr);
-    imagesc(reshape(wrongStates{wrongNr},5,7)','CDataMapping','scaled'); hold on;
+    imagesc(reshape(wrongStates(:,wrongNr),5,7)','CDataMapping','scaled'); hold on;
     subplot(2,Nwrong,Nwrong+wrongNr);
-    imagesc(reshape(originalStates{wrongNr},5,7)','CDataMapping','scaled');
-    hold off;
+    imagesc(reshape(originalStates(:,wrongNr),5,7)','CDataMapping','scaled'); hold on;
 end
-savefig('wrong_states.fig')
-        
+savefig('wrong_states.fig'); hold off;
+
+%% MAPPING ERROR IFO P
+Nit = 100;
+% store number of wrong results
+Nwrong = zeros(1,size(allLetters,2));
+% loop over the number of stored patterns P
+for P = 1:size(allLetters,2)
+    fprintf('Simulating with P = %i patterns stored.\n',P);
+    % take P attractors
+    T = allLetters(:,1:P);
+    % create a hopfield net
+    net = newhop(T);
+    % loop over Nit distored images per letter and calculate the error
+    for letterNr = 1:P
+        letter = T(:,P);
+        for it = 1:Nit
+            distImage = DistortImage(letter);
+            % use the net to retrieve
+            [Y,~,~] = net({1 timesteps},{},{distImage});
+                        
+            % clip
+            Y{end} = sign(Y{end});
+            % check if it's the correct one
+            sum(abs(Y{end} - letter));
+            Nwrong(P) = Nwrong(P) + sum(abs(Y{end} - letter));
+        end
+    end
+    Nwrong(P) = Nwrong(P) / (Nit*P*size(allLetters,1)); % normalize over number of states that we generated and nr of pixels
+end
+
+% estimate also with Hebb rule
+figure;
+sigmas = sqrt((1:size(allLetters,2))/size(allLetters,1));
+mus = zeros(1,size(allLetters,2));
+Perr = ones(1,size(allLetters,2))-normcdf(ones(1,size(allLetters,2)),mus,sigmas);
+%plot it
+plot(1:size(allLetters,2),Nwrong,'r-','LineWidth',2); hold on;
+plot(1:size(allLetters,2),Perr,'b-','LineWidth',2);
+legend('Pixel error','P_{error}')
+ylabel('Error');
+xlabel('Number of patterns stored');
+savefig('Eerror_ifo_P.fig');
