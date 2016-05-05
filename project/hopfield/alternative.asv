@@ -21,7 +21,7 @@ for P=10:size(icf,2)
     
     % make some possibilities of distortion of 3 pixels
     % this is used for training
-    numDist = 100; % number of distorted images per letter
+    numDist = 10; % number of distorted images per letter
     X = zeros(size(letters,1),size(letters,2)*numDist);
     T = zeros(size(letters,2),size(letters,2)*numDist);
     for il = 1:size(letters,2)
@@ -59,10 +59,14 @@ for P=10:size(icf,2)
             [Y,~,~] = net(distImage);
 
             % one-hot representation
-            [~,ind] = max(Y);% one-hot encoding
-            ind = ind(1);
-            
-            % keep the labels
+            [~,ind] = max(Y);
+            %fprintf('%i',ind);
+            if size(ind) ~= 1
+                disp('ola');
+            end
+            %ind = ind(1) % one-hot encoding
+            disp('ok')
+            ind2vec(letterNr)
             trueLabels(letterNr,it) = letterNr;
             simLabels(letterNr,it) = ind;
             
@@ -83,13 +87,13 @@ for P=10:size(icf,2)
         end
     end
     %icf(P) = sum(Nwrong) / (Nit*size(letters,2)*size(letters,1)); % normalize
-    icf(P) = sum(Nwrong) / (Nit*P); % normalize
+    icf(P) = sum(Nwrong) / (Nit*size(letters,2)); % normalize
     fprintf('%i patterns give a normalized image error of %f\n',P,icf(P));
     
     % confusion matrix
-    %trueLabels = reshape(trueLabels,[1 size(trueLabels,1)*size(trueLabels,2)]);
-    %simLabels = reshape(simLabels,[1 size(simLabels,1)*size(simLabels,2)]);
-    %plotconfusion(ind2vec(trueLabels),ind2vec(simLabels))
+    trueLabels = reshape(trueLabels,[1 size(trueLabels,1)*size(trueLabels,2)]);
+    simLabels = reshape(simLabels,[1 size(simLabels,1)*size(simLabels,2)]);
+    plotconfusion(ind1trueLabels,simLabels)
 end
 
 figure;
