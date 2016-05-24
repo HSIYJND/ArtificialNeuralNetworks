@@ -19,6 +19,7 @@ colormap(gray);
 for letterNr=1:10
     subplot(2,5,letterNr);
     imagesc(reshape(allLetters(:,letterNr),5,7)','CDataMapping','scaled'); % 5x7 bit maps transposed to a 7x5
+    set(gca,'xtick',[]); set(gca,'xticklabel',[]); set(gca,'ytick',[]); set(gca,'yticklabel',[]);
 end
 savefig('letters.fig');
 hold off; close all;
@@ -30,18 +31,16 @@ net = newhop(T);
 
 %% DISTORT AND RETRIEVE IMAGES
 % check the correct retrieval rate, output states that are spurious
-% even though we can do the following exactly, we do a Monte Carlo
+% even though we can do the following exactly, we do a
 % simulation. We create 1000 distorted images of each of the 5 letters and
 % use the Hopfield network to retrieve the original states.  If the number
 % of attempts is large enoug, we should find all spurious states. Note
 % however that there are 35!/(3!32!)= 6545 possible distorted images of
 % each of the letters
-
 % Compared to the assignment on Hopfields, the distorted image now has
 % discrete values for the pixels. Hence, it's now more feasible to end up
 % in a spurious state
 
-% catch all the wrong states
 Nwrong = 0;
 timesteps = 1000;
 for letterNr = 1:5
@@ -56,8 +55,8 @@ for letterNr = 1:5
             else
                 Nwrong = Nwrong + 1;
                 fprintf('  Wrong state at iteration: %i\n',it);
-                wrongStates(:,Nwrong) = Y{end};
-                originalStates(:,Nwrong) = Y{end};
+                wrongStates(:,Nwrong) = Y{end}; % add the state
+                originalStates(:,Nwrong) = letter;
             end
         end
     end
@@ -71,6 +70,7 @@ for wrongNr = 1:Nwrong
     subplot(2,Nwrong,Nwrong+wrongNr);
     imagesc(reshape(originalStates(:,wrongNr),5,7)','CDataMapping','scaled'); hold on;
 end
+hold all;
 savefig('wrong_states.fig'); hold off;
 
 %% MAPPING ERROR IFO P
@@ -95,7 +95,6 @@ for P = 1:size(allLetters,2)
             % clip
             Y{end} = sign(Y{end});
             % check if it's the correct one
-            sum(abs(Y{end} - letter));
             Nwrong(P) = Nwrong(P) + sum(abs(Y{end} - letter));
         end
     end
@@ -113,4 +112,4 @@ plot(1:size(allLetters,2),Perr,'b-','LineWidth',2);
 legend('Pixel error','P_{error}')
 ylabel('Error');
 xlabel('Number of patterns stored');
-savefig('Eerror_ifo_P.fig');
+savefig('Error_ifo_P.fig');

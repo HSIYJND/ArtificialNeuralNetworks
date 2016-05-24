@@ -99,4 +99,6 @@ subplot(1,2,2);
 set(gca,'yscale','log');
 grid on
 savefig('bias_and_variance.fig');
+
+
 save('my_workspace_loops.mat');

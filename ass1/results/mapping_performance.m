@@ -29,7 +29,7 @@ hold on;
 
 %% some stuff to keep, and return in the end
 for algoNr = 1:size(trainAlgos,1)
-    
+
     % take an algo name
     algoName=char(strcat(trainAlgos(algoNr,:)))
     Legend{algoNr}=algoName;

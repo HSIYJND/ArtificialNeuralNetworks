@@ -16,9 +16,10 @@ N = size(x,2);
 % reconstruct x
 errorx = x; % for the shape
 meanx = mean(x, 2);
-stdx = std(x,0,2); % N-1
+%stdx = std(x,0,2); % N-1
 for i = 1:N
-    errorx(:,i) = x(:,i) - ((E*z(:,i)).*stdx  + meanx);
+    %errorx(:,i) = x(:,i) - ((E*z(:,i)).*stdx  + meanx);
+    errorx(:,i) = x(:,i) - (E*z(:,i) + meanx);
 end
 
 % calculate the distance

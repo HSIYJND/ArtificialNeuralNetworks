@@ -17,7 +17,7 @@ X=X(indx,:)';
 
 % we then initialize the SOM with hextop as topology function
 % and linkdist as distance function
-net = newsom(X,[5 5 5],'hextop','dist'); 
+net = newsom(X,[5 5 5],'randtop','dist'); 
 
 % plot the data distribution with the prototypes of the untrained network
 figure;plot3(X(1,:),X(2,:),X(3,:),'.g','markersize',10);

@@ -9,7 +9,7 @@ p = size(threes,1);
 
 % compute and show the mean 3
 meanthree = mean(threes, 2);
-stddevthrees = std(threes,0,2); % Pass in FLAG==0 to use the default normalization by N-1
+%stddevthrees = std(threes,0,2); % Pass in FLAG==0 to use the default normalization by N-1
 colormap(gray);
 imagesc(reshape(meanthree,16,16),[0,1])
 
@@ -17,11 +17,11 @@ imagesc(reshape(meanthree,16,16),[0,1])
 size(meanthree)
 size(threes)
 size(repmat(meanthree,1,N))
-%zmthrees = threes - repmat(meanthree,1,N);
-zmthrees = mapstd(threes')'; % the standardized zero mean threes
+zmthrees = threes - repmat(meanthree,1,N);
+%zmthrees = mapstd(threes')'; % the standardized zero mean threes
 
 % compute the covariance matrix
-covmatrix = cov(transpose(zmthrees));
+covmatrix = cov(zmthrees');
 
 % calculate the eigenvalues and eigenvectors
 [~,Dall] = eig(covmatrix);
@@ -55,7 +55,9 @@ for q=1:qmax
     [E,z,d] = PCAJannes(zmthrees, q);
     %reconstruct
     size(meanthree)
-    TryImageReconstructed = (E*z(:,TryImageIndex)).*stddevthrees + meanthree;
+    %TryImageReconstructed = (E*z(:,TryImageIndex)).*stddevthrees + meanthree;
+    TryImageReconstructed = E*z(:,TryImageIndex) + meanthree;
+
     % rescale
  
     subplot(1,qmax+1,q); % the last one is the actual figure

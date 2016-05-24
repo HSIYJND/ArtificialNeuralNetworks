@@ -2,9 +2,12 @@ function [E,z,d,meanVec,stddevVec,stdX] = doPCA(x, q)
 % DOPCA  Do a Principle Component Analysis on a data set x
 %   [E,z,mean,stddev] = DOPCA(x,q) with x a dataset with each row a data entry, 
 %   performs PCA with result z and matrix E.
+%   this means that z is x in a reduced basis
 %   q is the reduced dimension (dimension of z)
-%
-%   See also PCA.
+%   d is the eigenvalue vector
+%   meanVec stddevVec contain the mean and standard deviation vector of the
+%   original data
+%   stdX contains the standardized set in unreduced space
 
 % get the dimension p of x and the number of datapoints N
 p = size(x,2);
@@ -14,6 +17,7 @@ N = size(x,1);
 % calculate the mean for all p data properties
 meanVec = mean(x);
 stddevVec = std(x);
+%stddevVec = ones(1,p);
 
 % rescale and shift with these vectors
 stdX = zeros(N, 11);
@@ -27,7 +31,7 @@ V = cov(stdX);
 
 % calculate the eigenvectors and eigenvalues
 % E is the matrix with columns the eigenvectors
-[E,d] = eig(V); % calculate q largest eigenvalues and eigenvecs
+[E,d] = eig(V);
 d = diag(d);
 
 % now sort them in descending order and take only q of them
