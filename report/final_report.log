@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.13)  23 MAY 2016 20:28
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.13)  20 JUN 2016 19:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -847,24 +847,21 @@ Package: helvet 2005/04/12 PSNFSS-v9.2a (WaS)
 (/usr/share/texlive/texmf-dist/tex/latex/placeins/placeins.sty
 Package: placeins 2005/04/18  v 2.2
 )
-\figureheight=\skip63
-\figurewidth=\skip64
-
 (./final_report.aux)
 \openout1 = `final_report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -965,24 +962,50 @@ ABD: EveryShipout initializing macros
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.9} into y
 our preamble.
- on input line 41.
+ on input line 43.
 
 \c@lstlisting=\count170
-LaTeX Font Info:    Try loading font information for U+msa on input line 46.
+(./titlepage_report.tex
+LaTeX Font Info:    Try loading font information for U+msa on input line 45.
+
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 46.
+LaTeX Font Info:    Try loading font information for U+msb on input line 45.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<figs/performance_plot.png, id=4, 602.25pt x 259.7203pt>
-File: figs/performance_plot.png Graphic file (type png)
+Overfull \hbox (26.65285pt too wide) in paragraph at lines 45--46
+[][][][][][][] 
+ []
 
-<use figs/performance_plot.png>
-Package pdftex.def Info: figs/performance_plot.png used on input line 53.
-(pdftex.def)             Requested size: 377.85419pt x 162.9549pt.
+<LogoKULeuven.png, id=4, 401.5pt x 143.53625pt>
+File: LogoKULeuven.png Graphic file (type png)
+ <use LogoKULeuven.png>
+Package pdftex.def Info: LogoKULeuven.png used on input line 50.
+(pdftex.def)             Requested size: 157.58296pt x 56.33646pt.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <30> not available
+(Font)              size <24.88> substituted on input line 57.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <20> not available
+(Font)              size <20.74> substituted on input line 58.
+
+
+Overfull \hbox (23.55522pt too wide) in paragraph at lines 76--77
+[][][] 
+ []
+
+) [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./LogoKULeuven.png>]
+(./final_report.toc)
+\tf@toc=\write4
+\openout4 = `final_report.toc'.
+
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -990,14 +1013,25 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+[1] <figs/performance_plot.png, id=22, 529.98pt x 306.39468pt>
+File: figs/performance_plot.png Graphic file (type png)
 
- <./figs/performance_plot.png (PNG copy)>] <figs/bias_and_variance.png, id=19, 
-669.2503pt x 259.7203pt>
+<use figs/performance_plot.png>
+Package pdftex.def Info: figs/performance_plot.png used on input line 62.
+(pdftex.def)             Requested size: 307.00247pt x 177.48462pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[2 <./figs/performance_plot.png (PNG copy)>]
+<figs/bias_and_variance.png, id=32, 669.2503pt x 259.7203pt>
 File: figs/bias_and_variance.png Graphic file (type png)
 
 <use figs/bias_and_variance.png>
-Package pdftex.def Info: figs/bias_and_variance.png used on input line 77.
+Package pdftex.def Info: figs/bias_and_variance.png used on input line 86.
 (pdftex.def)             Requested size: 425.08147pt x 164.96811pt.
 
 
@@ -1006,39 +1040,39 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[2 <./figs/bias_and_variance.png (PNG copy)>]
+[3 <./figs/bias_and_variance.png (PNG copy)>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[3] <figs/prior_contour.png, id=28, 230.8625pt x 229.85875pt>
+[4] <figs/prior_contour.png, id=41, 230.8625pt x 229.85875pt>
 File: figs/prior_contour.png Graphic file (type png)
 
 <use figs/prior_contour.png>
-Package pdftex.def Info: figs/prior_contour.png used on input line 104.
+Package pdftex.def Info: figs/prior_contour.png used on input line 120.
 (pdftex.def)             Requested size: 85.7313pt x 85.35826pt.
 
-<figs/posterior_contour.png, id=29, 221.82875pt x 220.825pt>
+<figs/posterior_contour.png, id=42, 221.82875pt x 220.825pt>
 File: figs/posterior_contour.png Graphic file (type png)
 
 <use figs/posterior_contour.png>
-Package pdftex.def Info: figs/posterior_contour.png used on input line 107.
+Package pdftex.def Info: figs/posterior_contour.png used on input line 123.
 (pdftex.def)             Requested size: 85.74449pt x 85.35826pt.
 
-<figs/separation_line.png, id=30, 275.0275pt x 274.02374pt>
+<figs/separation_line.png, id=43, 275.0275pt x 274.02374pt>
 File: figs/separation_line.png Graphic file (type png)
 
 <use figs/separation_line.png>
-Package pdftex.def Info: figs/separation_line.png used on input line 110.
+Package pdftex.def Info: figs/separation_line.png used on input line 126.
 (pdftex.def)             Requested size: 85.6731pt x 85.35826pt.
 
-<figs/overfitting_example.png, id=31, 347.79938pt x 223.58531pt>
+<figs/overfitting_example.png, id=44, 347.79938pt x 223.58531pt>
 File: figs/overfitting_example.png Graphic file (type png)
 
 <use figs/overfitting_example.png>
-Package pdftex.def Info: figs/overfitting_example.png used on input line 119.
+Package pdftex.def Info: figs/overfitting_example.png used on input line 135.
 (pdftex.def)             Requested size: 236.15797pt x 151.81422pt.
 
 
@@ -1047,40 +1081,47 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[4 <./figs/prior_contour.png> <./figs/posterior_contour.png> <./figs/separation
+[5 <./figs/prior_contour.png> <./figs/posterior_contour.png> <./figs/separation
 _line.png>]
 File: figs/bias_and_variance.png Graphic file (type png)
  <use figs/bias_and_variance.png>
-Package pdftex.def Info: figs/bias_and_variance.png used on input line 128.
+Package pdftex.def Info: figs/bias_and_variance.png used on input line 144.
 (pdftex.def)             Requested size: 377.85419pt x 146.6392pt.
 
-<figs/attractors.png, id=35, 90.3375pt x 352.31625pt>
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[6 <./figs/overfitting_example.png (PNG copy)>]
+<figs/attractors.png, id=54, 90.3375pt x 352.31625pt>
 File: figs/attractors.png Graphic file (type png)
 
 <use figs/attractors.png>
-Package pdftex.def Info: figs/attractors.png used on input line 143.
+Package pdftex.def Info: figs/attractors.png used on input line 159.
 (pdftex.def)             Requested size: 34.00728pt x 132.62897pt.
 
-<figs/noisy_digits.png, id=36, 87.32625pt x 325.215pt>
+<figs/noisy_digits.png, id=55, 87.32625pt x 325.215pt>
 File: figs/noisy_digits.png Graphic file (type png)
 
 <use figs/noisy_digits.png>
-Package pdftex.def Info: figs/noisy_digits.png used on input line 146.
+Package pdftex.def Info: figs/noisy_digits.png used on input line 162.
 (pdftex.def)             Requested size: 34.00728pt x 126.64972pt.
 
-<figs/partially_reconstructed.png, id=37, 94.3525pt x 354.32375pt>
+<figs/partially_reconstructed.png, id=56, 94.3525pt x 354.32375pt>
 File: figs/partially_reconstructed.png Graphic file (type png)
 
 <use figs/partially_reconstructed.png>
-Package pdftex.def Info: figs/partially_reconstructed.png used on input line 14
-9.
+Package pdftex.def Info: figs/partially_reconstructed.png used on input line 16
+5.
 (pdftex.def)             Requested size: 34.00728pt x 127.70782pt.
 
-<figs/reconstructed.png, id=38, 94.3525pt x 350.30875pt>
+<figs/reconstructed.png, id=57, 94.3525pt x 350.30875pt>
 File: figs/reconstructed.png Graphic file (type png)
 
 <use figs/reconstructed.png>
-Package pdftex.def Info: figs/reconstructed.png used on input line 152.
+Package pdftex.def Info: figs/reconstructed.png used on input line 168.
 (pdftex.def)             Requested size: 34.00728pt x 126.26071pt.
 
 
@@ -1089,36 +1130,26 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[5 <./figs/overfitting_example.png (PNG copy)>]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[6 <./figs/attractors.png> <./figs/noisy_digits.png> <./figs/partially_reconstr
+[7 <./figs/attractors.png> <./figs/noisy_digits.png> <./figs/partially_reconstr
 ucted.png> <./figs/reconstructed.png>]
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2013/08/26 1.5b listings language file
-)
-<figs/tansig_purelin.png, id=47, 718.18312pt x 155.07938pt>
+<figs/tansig_purelin.png, id=61, 491.58656pt x 96.36pt>
 File: figs/tansig_purelin.png Graphic file (type png)
 
 <use figs/tansig_purelin.png>
-Package pdftex.def Info: figs/tansig_purelin.png used on input line 187.
-(pdftex.def)             Requested size: 425.08147pt x 91.79181pt.
+Package pdftex.def Info: figs/tansig_purelin.png used on input line 198.
+(pdftex.def)             Requested size: 377.85419pt x 74.06949pt.
 
-<figs/correlation_map.png, id=48, 264.23718pt x 163.3603pt>
+<figs/correlation_map.png, id=62, 264.23718pt x 163.3603pt>
 File: figs/correlation_map.png Graphic file (type png)
 
 <use figs/correlation_map.png>
-Package pdftex.def Info: figs/correlation_map.png used on input line 200.
+Package pdftex.def Info: figs/correlation_map.png used on input line 213.
 (pdftex.def)             Requested size: 138.06535pt x 85.35826pt.
 
-<figs/mse_map.png, id=49, 258.9675pt x 167.87718pt>
+<figs/mse_map.png, id=63, 258.9675pt x 167.87718pt>
 File: figs/mse_map.png Graphic file (type png)
  <use figs/mse_map.png>
-Package pdftex.def Info: figs/mse_map.png used on input line 203.
+Package pdftex.def Info: figs/mse_map.png used on input line 216.
 (pdftex.def)             Requested size: 131.67256pt x 85.35826pt.
 
 
@@ -1127,19 +1158,19 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[7 <./figs/tansig_purelin.png (PNG copy)>]
-<figs/recon_and_cumsum.png, id=55, 336.50719pt x 202.50656pt>
+[8 <./figs/tansig_purelin.png (PNG copy)>]
+<figs/recon_and_cumsum.png, id=68, 336.50719pt x 202.50656pt>
 File: figs/recon_and_cumsum.png Graphic file (type png)
 
 <use figs/recon_and_cumsum.png>
-Package pdftex.def Info: figs/recon_and_cumsum.png used on input line 229.
-(pdftex.def)             Requested size: 188.9235pt x 113.69334pt.
+Package pdftex.def Info: figs/recon_and_cumsum.png used on input line 239.
+(pdftex.def)             Requested size: 236.15797pt x 142.11823pt.
 
-<figs/reconstruction_steps.png, id=56, 723.70375pt x 124.465pt>
+<figs/reconstruction_steps.png, id=69, 723.70375pt x 124.465pt>
 File: figs/reconstruction_steps.png Graphic file (type png)
 
 <use figs/reconstruction_steps.png>
-Package pdftex.def Info: figs/reconstruction_steps.png used on input line 247.
+Package pdftex.def Info: figs/reconstruction_steps.png used on input line 257.
 (pdftex.def)             Requested size: 472.31595pt x 81.23174pt.
 
 
@@ -1148,50 +1179,67 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[8 <./figs/correlation_map.png (PNG copy)> <./figs/mse_map.png (PNG copy)> <./f
+[9 <./figs/correlation_map.png (PNG copy)> <./figs/mse_map.png (PNG copy)> <./f
 igs/recon_and_cumsum.png (PNG copy)>]
-<figs/train_surface.png, id=61, 421.575pt x 316.18124pt>
+<figs/som_distances.png, id=74, 284.06125pt x 231.86626pt>
+File: figs/som_distances.png Graphic file (type png)
+
+<use figs/som_distances.png>
+Package pdftex.def Info: figs/som_distances.png used on input line 273.
+(pdftex.def)             Requested size: 139.43394pt x 113.81102pt.
+
+<figs/som_hits.png, id=75, 252.945pt x 229.85875pt>
+File: figs/som_hits.png Graphic file (type png)
+ <use figs/som_hits.png>
+Package pdftex.def Info: figs/som_hits.png used on input line 276.
+(pdftex.def)             Requested size: 125.24483pt x 113.81102pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[10 <./figs/reconstruction_steps.png> <./figs/som_distances.png> <./figs/som_hi
+ts.png>]
+Missing character: There is no â in font cmr9!
+Missing character: There is no € in font cmr9!
+Missing character: There is no “ in font cmr9!
+ <figs/train_surface.png, id=79, 421.575pt x 316.18124pt>
 File: figs/train_surface.png Graphic file (type png)
 
 <use figs/train_surface.png>
-Package pdftex.def Info: figs/train_surface.png used on input line 266.
+Package pdftex.def Info: figs/train_surface.png used on input line 299.
 (pdftex.def)             Requested size: 189.68768pt x 142.26378pt.
 
-Overfull \hbox (0.76419pt too wide) in paragraph at lines 266--267
+Overfull \hbox (0.76419pt too wide) in paragraph at lines 299--300
 [][] 
  []
 
-<figs/performance_val.png, id=62, 298.86656pt x 205.5178pt>
+<figs/performance_val.png, id=80, 303.38344pt x 202.50656pt>
 File: figs/performance_val.png Graphic file (type png)
 
 <use figs/performance_val.png>
-Package pdftex.def Info: figs/performance_val.png used on input line 269.
-(pdftex.def)             Requested size: 206.87938pt x 142.26378pt.
+Package pdftex.def Info: figs/performance_val.png used on input line 302.
+(pdftex.def)             Requested size: 213.1354pt x 142.26378pt.
 
-Overfull \hbox (17.95589pt too wide) in paragraph at lines 269--270
+Overfull \hbox (24.21191pt too wide) in paragraph at lines 302--303
 [][] 
  []
 
-<figs/MSE_final.png, id=63, 414.79968pt x 227.34938pt>
-File: figs/MSE_final.png Graphic file (type png)
-
-<use figs/MSE_final.png>
-Package pdftex.def Info: figs/MSE_final.png used on input line 276.
-(pdftex.def)             Requested size: 259.56563pt x 142.26378pt.
-
-<figs/NN_and_testsurf.png, id=64, 421.575pt x 295.1025pt>
+<figs/NN_and_testsurf.png, id=81, 414.04688pt x 314.67563pt>
 File: figs/NN_and_testsurf.png Graphic file (type png)
 
 <use figs/NN_and_testsurf.png>
-Package pdftex.def Info: figs/NN_and_testsurf.png used on input line 283.
-(pdftex.def)             Requested size: 203.23497pt x 142.26378pt.
+Package pdftex.def Info: figs/NN_and_testsurf.png used on input line 316.
+(pdftex.def)             Requested size: 187.1849pt x 142.26378pt.
 
-<figs/NN_test_error.png, id=65, 371.13657pt x 254.45062pt>
+<figs/NN_test_error.png, id=82, 421.575pt x 316.18124pt>
 File: figs/NN_test_error.png Graphic file (type png)
 
 <use figs/NN_test_error.png>
-Package pdftex.def Info: figs/NN_test_error.png used on input line 286.
-(pdftex.def)             Requested size: 207.51225pt x 142.26378pt.
+Package pdftex.def Info: figs/NN_test_error.png used on input line 319.
+(pdftex.def)             Requested size: 189.68768pt x 142.26378pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1199,13 +1247,21 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[9 <./figs/reconstruction_steps.png>]
-<figs/eigenvalues.png, id=69, 338.01282pt x 254.45062pt>
+[11 <./figs/train_surface.png (PNG copy)> <./figs/performance_val.png (PNG copy
+)>] <figs/eigenvalues_non-standardized.png, id=87, 289.08pt x 190.46156pt>
+File: figs/eigenvalues_non-standardized.png Graphic file (type png)
+
+<use figs/eigenvalues_non-standardized.png>
+Package pdftex.def Info: figs/eigenvalues_non-standardized.png used on input li
+ne 341.
+(pdftex.def)             Requested size: 172.73915pt x 113.81102pt.
+
+<figs/eigenvalues.png, id=88, 338.01282pt x 254.45062pt>
 File: figs/eigenvalues.png Graphic file (type png)
 
 <use figs/eigenvalues.png>
-Package pdftex.def Info: figs/eigenvalues.png used on input line 302.
-(pdftex.def)             Requested size: 170.71652pt x 128.514pt.
+Package pdftex.def Info: figs/eigenvalues.png used on input line 344.
+(pdftex.def)             Requested size: 151.1863pt x 113.81102pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1213,34 +1269,33 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[10 <./figs/train_surface.png (PNG copy)> <./figs/performance_val.png (PNG copy
-)> <./figs/MSE_final.png (PNG copy)> <./figs/NN_and_testsurf.png (PNG copy)> <.
-/figs/NN_test_error.png (PNG copy)>]
+[12 <./figs/NN_and_testsurf.png (PNG copy)> <./figs/NN_test_error.png (PNG copy
+)>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[11 <./figs/eigenvalues.png (PNG copy)>]
-<figs/letters.png, id=76, 303.38344pt x 184.43906pt>
+[13 <./figs/eigenvalues_non-standardized.png (PNG copy)> <./figs/eigenvalues.pn
+g (PNG copy)>] <figs/letters.png, id=96, 303.38344pt x 184.43906pt>
 File: figs/letters.png Graphic file (type png)
- <use figs/letters.png>
-Package pdftex.def Info: figs/letters.png used on input line 317.
-(pdftex.def)             Requested size: 284.52756pt x 172.97873pt.
 
-<figs/wrong_states.png, id=77, 228.855pt x 180.675pt>
+<use figs/letters.png>
+Package pdftex.def Info: figs/letters.png used on input line 365.
+(pdftex.def)             Requested size: 284.52756pt x 172.97873pt.
+ <figs/wrong_states.png, id=97, 228.855pt x 180.675pt>
 File: figs/wrong_states.png Graphic file (type png)
 
 <use figs/wrong_states.png>
-Package pdftex.def Info: figs/wrong_states.png used on input line 324.
-(pdftex.def)             Requested size: 284.52756pt x 224.63567pt.
+Package pdftex.def Info: figs/wrong_states.png used on input line 372.
+(pdftex.def)             Requested size: 227.62204pt x 179.70963pt.
 
-<figs/Error_ifo_P.png, id=78, 311.66437pt x 225.84375pt>
+<figs/Error_ifo_P.png, id=98, 311.66437pt x 225.84375pt>
 File: figs/Error_ifo_P.png Graphic file (type png)
 
 <use figs/Error_ifo_P.png>
-Package pdftex.def Info: figs/Error_ifo_P.png used on input line 334.
+Package pdftex.def Info: figs/Error_ifo_P.png used on input line 382.
 (pdftex.def)             Requested size: 227.62204pt x 164.94727pt.
 
 
@@ -1249,20 +1304,20 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[12 <./figs/letters.png (PNG copy)> <./figs/wrong_states.png (PNG copy)>]
+[14 <./figs/letters.png (PNG copy)> <./figs/wrong_states.png (PNG copy)>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[13 <./figs/Error_ifo_P.png (PNG copy)>]
-<figs/alternative_error.png, id=88, 374.90062pt x 231.86626pt>
+[15 <./figs/Error_ifo_P.png (PNG copy)>]
+<figs/alternative_error.png, id=107, 367.3725pt x 209.28188pt>
 File: figs/alternative_error.png Graphic file (type png)
 
 <use figs/alternative_error.png>
-Package pdftex.def Info: figs/alternative_error.png used on input line 364.
-(pdftex.def)             Requested size: 284.52756pt x 175.98312pt.
+Package pdftex.def Info: figs/alternative_error.png used on input line 414.
+(pdftex.def)             Requested size: 227.62204pt x 129.67357pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1270,7 +1325,10 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[14 <./figs/alternative_error.png (PNG copy)>]
+[16 <./figs/alternative_error.png (PNG copy)>]
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2013/08/26 1.5b listings language file
+)
 (../project/regression/regression_project.m
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 14.
 
@@ -1286,21 +1344,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[15]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[16]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[17]) (../project/classification/classification.m
+[17]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -1314,99 +1358,121 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[19]) (../project/classification/doPCA.m
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 14.
+[19]) (../project/classification/classification.m
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[20]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[21]) (../project/classification/doPCA.m
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[22]
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 14.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 14.
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[20]) (../project/hopfield/hopfield.m
+)
+(../project/hopfield/hopfield.m
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[21]
+[23]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[22]) (../project/hopfield/DistortImage.m) (../project/hopfield/GenerateName.m
+[24]) (../project/hopfield/DistortImage.m) (../project/hopfield/GenerateName.m
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[23]) (../project/hopfield/alternative.m
+[25]) (../project/hopfield/alternative.m
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[24]
+[26]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[25]
+[27]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[26])
+[28])
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[27] (./final_report.aux) ) 
+[29] (./final_report.aux)
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 5.12pt have occurred.
+
+ ) 
 Here is how much of TeX's memory you used:
- 25993 strings out of 494985
- 582218 string characters out of 6180356
- 963717 words of memory out of 5000000
- 28611 multiletter control sequences out of 15000+600000
- 13731 words of font info for 54 fonts, out of 8000000 for 9000
+ 25946 strings out of 494985
+ 581169 string characters out of 6180356
+ 952319 words of memory out of 5000000
+ 28554 multiletter control sequences out of 15000+600000
+ 14329 words of font info for 56 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 56i,12n,76p,1510b,1559s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-ex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on final_report.pdf (27 pages, 763916 bytes).
+ 56i,12n,75p,2422b,2117s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmtt9.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/symbols/msbm10.pfb>
+Output written on final_report.pdf (30 pages, 829283 bytes).
 PDF statistics:
- 188 PDF objects out of 1000 (max. 8388607)
- 115 compressed objects within 2 object streams
+ 216 PDF objects out of 1000 (max. 8388607)
+ 132 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 138 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 159 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -13,8 +13,8 @@ true_labels = iris(:,end);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 x_length = 3;
 y_length = 1;
-net = newsom(X',[y_length x_length],'hextop','linkdist');
-net.trainParam.epochs = 100;
+net = newsom(X',[y_length x_length],'gridtop','linkdist');
+net.trainParam.epochs = 1000;
 net = train(net,X');
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

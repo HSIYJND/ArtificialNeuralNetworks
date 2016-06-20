@@ -25,13 +25,14 @@ shuffledInd = randperm(size(T,1));
 X1 = X1(shuffledInd);
 X2 = X2(shuffledInd);
 T = T(shuffledInd);
+X = [ X1'; X2' ]';
 
 % divide the data in subsets (use the first 3000, they are already shuffled)
 rng(1);
 useN = 3000;
 [trainInd,valInd,testInd] = dividerand(useN,1/3,1/3,1/3);
 
-% easier variables for training the network
+% easier variables for later
 xtrain = [X1(trainInd)'; X2(trainInd)'];% input
 ytrain = T(trainInd,:)'; % target
 xval = [X1(valInd)'; X2(valInd)'];
@@ -65,7 +66,7 @@ scatter3(X1(testInd), X2(testInd), T(testInd), 15, 'MarkerFaceColor','r'); hold 
 %% CREATE THE VALIDATION PLOT
 
 % create some vectors to plot
-nhvals = [1,5,10,15,20,25,30,35,40,45,50];
+nhvals = [1,10,15,20,25,30,35,40,45,50,55,60,65];
 mseVal = zeros(length(nhvals),1);
 mseTrain = zeros(length(nhvals),1);
 mseTest = zeros(length(nhvals),1);
@@ -80,15 +81,19 @@ for nhIt = 1:length(nhvals)
     
     % train the network
     net = feedforwardnet(nh,'trainlm');
-    net.divideFcn = 'dividetrain'; % Use the whole training set for training
+    net.divideFcn = 'divideind';
+    net.divideParam.trainInd = trainInd;
+    net.divideParam.valInd = valInd;
+    net.divideParam.testInd = testInd; % we won't need it in the final plot, so it's just for monitoring
     net.layers{1}.transferFcn = 'tansig';
     net.layers{2}.transferFcn = 'purelin';
     net.trainParam.showWindow=0;
-    net.trainParam.epochs = 5000;
+    net.trainParam.epochs = 5000; % maximum number, take it large, since I don't know how long it will take
+    net.trainParam.max_fail = 100; % set really high, so it can decide itself
     
     % train the network
-    [net,tr] = train(net, xtrain, ytrain, 'UseParallel', 'yes');
-    nntraintool('close');
+    [net,tr] = train(net, X', T', 'UseParallel', 'yes');
+    %nntraintool('close');
     
     % show number of epochs used
     disp(['Used ' num2str(tr.num_epochs) ' epochs']);
@@ -109,9 +114,6 @@ for nhIt = 1:length(nhvals)
     mseTest(nhIt) = perfTest;
 end
 
-%% SELECT A NETWORK ARCHITECTURE FROM THE RESULTS
-nhfinal = 35;
-
 %% SHOW PERFORMANCE ON VALIDATION SET
 figure
 semilogy(nhvals, mseTrain, 'Color','b', 'LineWidth',2); hold on;
@@ -120,9 +122,11 @@ semilogy(nhvals, mseTest, 'Color','r', 'LineWidth',2);
 xlabel('Neurons in the hidden layer'); ylabel('MSE');
 savefig('performance_val.fig');
 
+%% SELECT A NETWORK ARCHITECTURE FROM THE RESULTS
+nhfinal = 40;
+
 %% PLOT THE RESULT OF THE OPTED ARCHITECTURE
 % train the network
-rng(1);
 net = feedforwardnet(nhfinal,'trainlm');
 net.divideFcn = 'divideind'; % also give it access to the other sets for plotting
 net.divideParam.trainInd = trainInd;
@@ -130,18 +134,18 @@ net.divideParam.valInd = valInd;
 net.divideParam.testInd = testInd;
 net.layers{1}.transferFcn = 'tansig'; % hidden layer
 net.layers{2}.transferFcn = 'purelin'; % output layer
-net.trainParam.epochs = 5000; % set really high, so it can decide itself
-net.trainParam.max_fail = 50; % set really high, so it can decide itself
-[net,tr] = train(net, xtrain, ytrain);
+net.trainParam.epochs = 20000; % set really high, so it can decide itself
+net.trainParam.max_fail = 1000; % set really high, so it can decide itself
+[net,tr] = train(net, X', T', 'UseParallel', 'yes');
+plotperform(tr)
+
 
 % calculate its output on the meshgrid
 ZmeshNN = net([Xmesh(:) Ymesh(:)]');
 ZmeshNN = reshape(ZmeshNN,size(Xmesh,1),size(Xmesh,2));
-
 % map the interpolator of the test set
 testInterpolant = TriScatteredInterp(X1(testInd),X2(testInd),T(testInd));
 ZmeshTest = testInterpolant(Xmesh, Ymesh);
-
 % plot it together with the interpolant of the TEST set
 figure
 surface(Xmesh, Ymesh, ZmeshNN,'FaceColor', 'g'); hold on; % plot the NN 
@@ -168,18 +172,17 @@ plotregression(sim(net, xtest),ytest);
 
 
 %% USE ALL THE DATA TO SEE WHAT HAPPENS, ALSO USE BETTER RATIOS
-rng(1);
+nhfinal = 50;
 useN = size(T,1);
 [trainInd,valInd,testInd] = dividerand(useN);
 % easier variables for training the network
-xtrain = [X1(trainInd)'; X2(trainInd)'];% input
-ytrain = T(trainInd,:)'; % target
-xval = [X1(valInd)'; X2(valInd)'];
-yval = T(valInd)';
+% xtrain = [X1(trainInd)'; X2(trainInd)'];% input
+% ytrain = T(trainInd,:)'; % target
+% xval = [X1(valInd)'; X2(valInd)'];
+% yval = T(valInd)';
 xtest = [X1(testInd)'; X2(testInd)'];
 ytest = T(testInd)';
 % train the network
-rng(1);
 net = feedforwardnet(nhfinal,'trainlm');
 net.divideFcn = 'divideind'; % also give it access to the other sets for plotting
 net.divideParam.trainInd = trainInd;
@@ -187,9 +190,10 @@ net.divideParam.valInd = valInd;
 net.divideParam.testInd = testInd;
 net.layers{1}.transferFcn = 'tansig'; % hidden layer
 net.layers{2}.transferFcn = 'purelin'; % output layer
-net.trainParam.epochs = 5000; % set really high, so it can decide itself
-net.trainParam.max_fail = 50; % set really high, so it can decide itself
-[net,tr] = train(net, xtrain, ytrain, 'UseParallel','yes');
+net.trainParam.epochs = 20000; % set really high, so it can decide itself
+net.trainParam.max_fail = 1000; % set really high, so it can decide itself
+[net,tr] = train(net, X', T', 'UseParallel','yes');
+plotperform(tr)
 % calculate its output on the meshgrid
 ZmeshNN = net([Xmesh(:) Ymesh(:)]');
 ZmeshNN = reshape(ZmeshNN,size(Xmesh,1),size(Xmesh,2));

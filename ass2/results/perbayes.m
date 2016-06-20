@@ -8,7 +8,7 @@ close all
 %% 
 % Generate a single neuron perceptron with zero bias and two arbitrary weights
 % plot the targets and decision boundary
-numinput=50;
+numinput=5;
 net=newp([-1 1; -1 1], 1);
 net.IW{1,1}=rands(1,2);
 P=rands(2,numinput)

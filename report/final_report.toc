@@ -1,0 +1,30 @@
+\select@language {english}
+\contentsline {section}{\numberline {1}REPORT 1: backpropagation in feedforward multi-layer nets}{2}
+\contentsline {subsection}{\numberline {1.1}Function approximation}{2}
+\contentsline {subsection}{\numberline {1.2}Generalization: noisy data and overfitting}{3}
+\contentsline {section}{\numberline {2}REPORT 2: Bayesian learning in neural networks}{5}
+\contentsline {subsection}{\numberline {2.1}`Pure' Bayesian training versus `trainbr'}{5}
+\contentsline {subsection}{\numberline {2.2}Bayesian regularization using `trainbr'}{6}
+\contentsline {section}{\numberline {3}Report 3: Recurrent neural networks}{7}
+\contentsline {subsection}{\numberline {3.1}Hopfield network for digit reconstruction}{7}
+\contentsline {subsection}{\numberline {3.2}Elman recurrent network approximation for the Hammerstein function}{8}
+\contentsline {section}{\numberline {4}Report 4: Unsupervised learning: PCA and SOM}{9}
+\contentsline {subsection}{\numberline {4.1}Principal Component Analysis on Handwritten Digits}{9}
+\contentsline {subsection}{\numberline {4.2}Self-organizing maps: concentric cylinders}{10}
+\contentsline {subsection}{\numberline {4.3}Self-organizing maps: unsupervised clustering of the Iris data set}{10}
+\contentsline {section}{\numberline {5}PROJECT 1: Regression of function data}{11}
+\contentsline {section}{\numberline {6}PROJECT 2: Classification of wine data}{12}
+\contentsline {section}{\numberline {7}PROJECT 3: Character recognition}{14}
+\contentsline {subsection}{\numberline {7.1}Hopfield network}{14}
+\contentsline {subsection}{\numberline {7.2}Alternative solution to character recognition}{15}
+\contentsline {section}{\numberline {A}Matlab code that implements the solutions}{17}
+\contentsline {subsection}{\numberline {A.1}Regression (see Section \ref {sec:regression})}{17}
+\contentsline {subsubsection}{\numberline {A.1.1}Main code}{17}
+\contentsline {subsection}{\numberline {A.2}Classification (see Section \ref {sec:classification})}{20}
+\contentsline {subsubsection}{\numberline {A.2.1}Main code}{20}
+\contentsline {subsubsection}{\numberline {A.2.2}PCA related}{22}
+\contentsline {subsection}{\numberline {A.3}Character recognition (see Section \ref {sec:hopfield})}{23}
+\contentsline {subsubsection}{\numberline {A.3.1}Main code}{23}
+\contentsline {subsubsection}{\numberline {A.3.2}Image distortion}{25}
+\contentsline {subsubsection}{\numberline {A.3.3}Name generation}{25}
+\contentsline {subsubsection}{\numberline {A.3.4}Alternative to Hopfield}{26}

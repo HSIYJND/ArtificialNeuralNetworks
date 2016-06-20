@@ -74,7 +74,7 @@ end
 
 figure;
 plot(1:P,icf,'r-','LineWidth',2);
-xlabel('Number of patterns stored'); ylabel('Pixel error');
+xlabel('Number of patterns stored'); ylabel('Error');
 savefig('alternative_error.fig');
 
 % THIS PART IS TO INTENSIVE FOR MY PC

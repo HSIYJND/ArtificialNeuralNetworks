@@ -17,7 +17,7 @@ close all;
 n_tr=300; %number of training points
 n_te=200; %number of test points
 
-n_neurons=100;
+n_neurons=10;
 
 n=1000; %total number of samples
 

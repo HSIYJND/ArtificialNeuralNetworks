@@ -79,6 +79,7 @@ Xn = X;
 for i=1:N;
   randn('state', i);
   Xn(i,:) = X(i,:) + noise*randn(1, dim);
+  Xn(i,:) = sign(Xn(i,:));
 end
 
 %Show noisy digits:

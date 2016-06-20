@@ -22,8 +22,8 @@ N = Npos + Nneg;
 % shuffle and divide the data
 rng(1);
 [trainInd, valInd, testInd] = dividerand(N); % default is 0.7, 0.15, 0.15
-stdX = mapstd(X);
-
+%stdX = mapstd(X);
+stdX=X;
 
 %% CREATING A NEURAL NETWORK TO CLASSIFY THE DATA
 % create a network and train it
@@ -64,7 +64,7 @@ savefig('eigenvalues.fig');
 
 % we project the vectors onto the restricted eigenbasis (columns of eigvecs)
 numBasisVecs=8; % choose the number of eigenvectors
-[PCABasis,redXTrain,eigvals,meanTrain,stddevTrain,stdXTrain] = doPCA(X(:,trainInd)',numBasisVecs);
+[PCABasis,redXTrain,eigvals,~,~,stdXTrain] = doPCA(X(:,trainInd)',numBasisVecs);
 
 % project also validation and test set, but first standardize them, use
 % part of my doPCA function for this

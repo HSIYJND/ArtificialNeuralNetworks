@@ -3,90 +3,80 @@
 \@writefile{toc}{\select@language{english}}
 \@writefile{lof}{\select@language{english}}
 \@writefile{lot}{\select@language{english}}
-\@writefile{toc}{\contentsline {section}{\numberline {1}REPORT 1: backpropagation in feedforward multi-layer nets}{1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Function approximation}{1}}
-\newlabel{eq:myfunction}{{1}{1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Performance (MSE) of the tested training rules as a function of (left) time and (right) epochs where the maximum number of epochs is limited to $1000$. The log-log scale is opted to vizualize the initial drop in MSE. \relax }}{1}}
+\@writefile{toc}{\contentsline {section}{\numberline {1}REPORT 1: backpropagation in feedforward multi-layer nets}{2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Function approximation}{2}}
+\newlabel{eq:myfunction}{{1}{2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Performance (MSE) of the tested training rules as a function of (left) time and (right) epochs where the maximum number of epochs is limited to $1000$. The log-log scale is opted to visualize the initial drop in MSE. \relax }}{2}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:performace_plot}{{1}{1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Generalization: noisy data and overfitting}{2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Bias and variance as a function of the complexity of the neural network. In this exercise, \texttt  {trainbr} can be ignored, since it is discussed in the next report.\relax }}{2}}
-\newlabel{fig:bias_and_variance}{{2}{2}}
-\@writefile{toc}{\contentsline {section}{\numberline {2}REPORT 2: Bayesian learning in neural networks}{4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}`Pure' Bayesian training versus `trainbr'}{4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Prior, posterior and classification with corresponding separation line of the original (blue) and MAP network (red). Some (but not many) samples are misclassified.\relax }}{4}}
-\newlabel{fig:example_perbayes}{{3}{4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Bayesian regularization using `trainbr'}{4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Illustration of an overfitted network trained with the Levenberg-Marquadt algorithm (red), compared to the results of the Bayesian learning (green) for a data set with $h(x)=\qopname  \relax o{sin}(x) + \mathcal  {N}(\sigma )$ where $\sigma = 0.3$. Both networks have the same architecture, which includes $10$ neurons in the hidden layer.\relax }}{5}}
-\newlabel{fig:overfitting_example}{{4}{5}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Bias and variance plot as a function of the complexity of the neural network.\relax }}{5}}
-\newlabel{fig:bias_and_variance_plot}{{5}{5}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Report 3: Recurrent neural networks}{6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Hopfield network for digit reconstruction}{6}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces From left to right: attractor states, noisy digits, reconstructed digits after 1 iteration, reconstructed digits.\relax }}{6}}
-\@writefile{tdo}{\contentsline {todo}{Check if this is indeed the case, there should be some..}{6}}
-\pgfsyspdfmark {pgfid1}{6742228}{7644267}
-\pgfsyspdfmark {pgfid4}{37333363}{7657723}
-\pgfsyspdfmark {pgfid5}{38955379}{7412537}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Elman recurrent network approximation for the Hammerstein function}{7}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Output of an Elman network with $10$ neurons in the hidden layer and the \texttt  {tansig} and \texttt  {purelin} transfer function in the hidden and output layer respectively. The correlation between both data sets is $0.7994$. \relax }}{7}}
-\newlabel{fig:tansig_purelin}{{7}{7}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Correlation (left) and mean-square error (right) of the Elman network tested on the test set in function of the number of neurons in the hidden layer. \relax }}{8}}
-\newlabel{fig:elman}{{8}{8}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Report 4: Unsupervised learning: PCA and SOM}{8}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Principal Component Analysis on Handwritten Digits}{8}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Total sum of all eigenvalues minus the cumulative sum of the reconstruction $k$ largest eigenvalues of the covariance matrix (dashed blue) and mean-squared reconstruction error (solid red) as a function of the dimensionality of the PC basis.\relax }}{8}}
-\newlabel{fig:recon_and_cumsum}{{9}{8}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Self-organizing maps: concentric cylinders}{8}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Example of a reconstruction of an image using a basis of (f.l.t.r.) $1,2,3$ and $4$ principal eigenvectors. The outer-rightmost figure is the original, uncompressed image. It was observed that for this data item, a basis of $\sim 50$ eigenvectors is required to restore the image properly.\relax }}{9}}
-\newlabel{fig:reconstruction_example}{{10}{9}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Self-organizing maps: unsupervised clustering of the Iris data set}{9}}
-\@writefile{tdo}{\contentsline {todo}{Do the matlab example!}{9}}
-\pgfsyspdfmark {pgfid6}{4102289}{34495584}
-\pgfsyspdfmark {pgfid9}{37333363}{34509040}
-\pgfsyspdfmark {pgfid10}{38955379}{34263854}
-\@writefile{toc}{\contentsline {section}{\numberline {5}PROJECT 1: Regression of function data}{9}}
-\newlabel{sec:regression}{{5}{9}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Left: surface and data points in the training set. Right: Performance on the training, validation and test set as a function of the number of neurons in the hidden layer. \relax }}{10}}
-\newlabel{fig:performance_val}{{11}{10}}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Performance on the training, validation and test set as a function of the number of epochs in the training process. \relax }}{10}}
-\newlabel{fig:MSE_final}{{12}{10}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}PROJECT 2: Classification of wine data}{10}}
-\newlabel{sec:classification}{{6}{10}}
-\@writefile{tdo}{\contentsline {todo}{Check the effect of the normalization!!!}{10}}
-\pgfsyspdfmark {pgfid11}{4102289}{24249350}
-\pgfsyspdfmark {pgfid14}{37333363}{24262806}
-\pgfsyspdfmark {pgfid15}{38955379}{24017620}
-\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Left: Neural network (green) and test data (red) surface. The surfaces are almost indistinguishable. Right: Contour plot of the test set error. \relax }}{10}}
-\newlabel{fig:NN_and_testsurf}{{13}{10}}
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Eigenvalues of the $11\times 11$ covariance matrix. The red line indicates the cumulative sum of remaining (k+1):end eigenvalues, which is proportional to the reconstruction error. \relax }}{11}}
-\newlabel{fig:eigenvalues}{{14}{11}}
-\@writefile{toc}{\contentsline {section}{\numberline {7}PROJECT 3: Character recognition}{12}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Hopfield network}{12}}
-\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces First 10 of the 32 letters that are used in the character recognition exercise.\relax }}{12}}
-\newlabel{fig:letters}{{15}{12}}
-\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Incorrectly reconstructed characters (top row) with corresponding input (bottom row).\relax }}{12}}
-\newlabel{fig:wrong_states}{{16}{12}}
-\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Total pixel error (red),normalized over the number of states generated and total pixels in an image (35), and the theoretical prediction curve based on the Hebb rule (blue).\relax }}{13}}
-\newlabel{fig:error_ifo_P}{{17}{13}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Alternative solution to character recognition}{13}}
-\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Percentage of false reconstructed images (not pixels as before) as a function of the number of patters stored.\relax }}{14}}
-\newlabel{fig:alternative_error}{{18}{14}}
-\@writefile{toc}{\contentsline {section}{\numberline {A}Matlab code that implements the solutions}{15}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.1}Regression (see Section \ref  {sec:regression})}{15}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.1.1}Main code}{15}}
-\@writefile{lol}{\contentsline {lstlisting}{../project/regression/regression\textunderscore project.m}{15}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.2}Classification (see Section \ref  {sec:classification})}{18}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.2.1}Main code}{18}}
-\@writefile{lol}{\contentsline {lstlisting}{../project/classification/classification.m}{18}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.2.2}PCA related}{20}}
-\@writefile{lol}{\contentsline {lstlisting}{../project/classification/doPCA.m}{20}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.3}Classification (see Section \ref  {sec:classification})}{21}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.3.1}Main code}{21}}
-\@writefile{lol}{\contentsline {lstlisting}{../project/hopfield/hopfield.m}{21}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.3.2}Image distortion}{23}}
-\@writefile{lol}{\contentsline {lstlisting}{../project/hopfield/DistortImage.m}{23}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.3.3}Name generation}{23}}
-\@writefile{lol}{\contentsline {lstlisting}{../project/hopfield/GenerateName.m}{23}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.3.4}Alternative to Hopfield}{24}}
-\@writefile{lol}{\contentsline {lstlisting}{../project/hopfield/alternative.m}{24}}
+\newlabel{fig:performace_plot}{{1}{2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Generalization: noisy data and overfitting}{3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Bias and variance as a function of the complexity of the neural network. In this exercise, \texttt  {trainbr} can be ignored, since it is discussed in the next report.\relax }}{3}}
+\newlabel{fig:bias_and_variance}{{2}{3}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}REPORT 2: Bayesian learning in neural networks}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}`Pure' Bayesian training versus `trainbr'}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Prior, posterior and classification with corresponding separation line of the original (blue) and MAP network (red). Some (but not many) samples are misclassified.\relax }}{5}}
+\newlabel{fig:example_perbayes}{{3}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Bayesian regularization using `trainbr'}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Illustration of an overfitted network trained with the Levenberg-Marquadt algorithm (red), compared to the results of the Bayesian learning (green) for a data set with $h(x)=\qopname  \relax o{sin}(x) + \mathcal  {N}(\sigma )$ where $\sigma = 0.3$. Both networks have the same architecture, which includes $10$ neurons in the hidden layer.\relax }}{6}}
+\newlabel{fig:overfitting_example}{{4}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Bias and variance plot as a function of the complexity of the neural network.\relax }}{6}}
+\newlabel{fig:bias_and_variance_plot}{{5}{6}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Report 3: Recurrent neural networks}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Hopfield network for digit reconstruction}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces From left to right: attractor states, noisy digits, reconstructed digits after 1 iteration, reconstructed digits.\relax }}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Elman recurrent network approximation for the Hammerstein function}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Output of an Elman network with $10$ neurons in the hidden layer and the \texttt  {tansig} and \texttt  {purelin} transfer function in the hidden and output layer respectively. Also shown is the target test set. The correlation between both data sets is $0.795$. One should be aware that there is a time gap between the train and and test set. \relax }}{8}}
+\newlabel{fig:tansig_purelin}{{7}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Correlation (left) and mean-square error (right) of the Elman network tested on the test set in function of the number of neurons in the hidden layer. \relax }}{9}}
+\newlabel{fig:elman}{{8}{9}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Report 4: Unsupervised learning: PCA and SOM}{9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Principal Component Analysis on Handwritten Digits}{9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Total sum of all eigenvalues minus the cumulative sum of the reconstruction $k$ largest eigenvalues of the covariance matrix (dashed blue) and mean-squared reconstruction error (solid red) as a function of the dimensionality of the PC basis.\relax }}{9}}
+\newlabel{fig:recon_and_cumsum}{{9}{9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Example of a reconstruction of an image using a basis of (f.l.t.r.) $1,2,3$ and $4$ principal eigenvectors. The outer-rightmost figure is the original, uncompressed image. It was observed that for this data item, a basis of $\sim 50$ eigenvectors is required to restore the image properly.\relax }}{10}}
+\newlabel{fig:reconstruction_example}{{10}{10}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Self-organizing maps: concentric cylinders}{10}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Self-organizing maps: unsupervised clustering of the Iris data set}{10}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces From left to right: neighbor weight distance (darker is further) and number of hits per weight vector.\relax }}{10}}
+\newlabel{fig:som_figs}{{11}{10}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}PROJECT 1: Regression of function data}{11}}
+\newlabel{sec:regression}{{5}{11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Left: surface and data points in the training set. Right: Performance on the training, validation and test set as a function of the number of neurons in the hidden layer using $5000$ epochs. \relax }}{11}}
+\newlabel{fig:performance_val}{{12}{11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Left: Neural network (green) and test data (red) surface. The surfaces are almost indistinguishable. Right: Contour plot of the test set error. \relax }}{12}}
+\newlabel{fig:NN_and_testsurf}{{13}{12}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}PROJECT 2: Classification of wine data}{12}}
+\newlabel{sec:classification}{{6}{12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Eigenvalues of the $11\times 11$ covariance matrix. The left and right panel show the result for the original and standardized data respectively. The red line indicates the cumulative sum of the remaining (k+1):end eigenvalues, which is proportional to the reconstruction error. \relax }}{13}}
+\newlabel{fig:eigenvalues}{{14}{13}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}PROJECT 3: Character recognition}{14}}
+\newlabel{sec:hopfield}{{7}{14}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Hopfield network}{14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces First 10 of the 32 letters that are used in the character recognition exercise.\relax }}{14}}
+\newlabel{fig:letters}{{15}{14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Incorrectly reconstructed characters (top row) with corresponding input (bottom row).\relax }}{14}}
+\newlabel{fig:wrong_states}{{16}{14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Total pixel error (red),normalized over the number of states generated and total pixels in an image (35), and the theoretical prediction curve based on the Hebb rule (blue).\relax }}{15}}
+\newlabel{fig:error_ifo_P}{{17}{15}}
+\newlabel{eq:pmax}{{4}{15}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Alternative solution to character recognition}{15}}
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Percentage of false reconstructed images (not pixels as before) as a function of the number of patters stored.\relax }}{16}}
+\newlabel{fig:alternative_error}{{18}{16}}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Matlab code that implements the solutions}{17}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.1}Regression (see Section \ref  {sec:regression})}{17}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.1.1}Main code}{17}}
+\@writefile{lol}{\contentsline {lstlisting}{../project/regression/regression\textunderscore project.m}{17}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.2}Classification (see Section \ref  {sec:classification})}{20}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.2.1}Main code}{20}}
+\@writefile{lol}{\contentsline {lstlisting}{../project/classification/classification.m}{20}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.2.2}PCA related}{22}}
+\@writefile{lol}{\contentsline {lstlisting}{../project/classification/doPCA.m}{22}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.3}Character recognition (see Section \ref  {sec:hopfield})}{23}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.3.1}Main code}{23}}
+\@writefile{lol}{\contentsline {lstlisting}{../project/hopfield/hopfield.m}{23}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.3.2}Image distortion}{25}}
+\@writefile{lol}{\contentsline {lstlisting}{../project/hopfield/DistortImage.m}{25}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.3.3}Name generation}{25}}
+\@writefile{lol}{\contentsline {lstlisting}{../project/hopfield/GenerateName.m}{25}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {A.3.4}Alternative to Hopfield}{26}}
+\@writefile{lol}{\contentsline {lstlisting}{../project/hopfield/alternative.m}{26}}
